@@ -16,7 +16,7 @@ const GlobalProvider = ({ children }) => {
         if (width > 426 && width <= 768) {
             setIsTablet(true);
         }
-    }, [width]);
+    });
 
     return (
         <GlobalContext.Provider value={{ isMobile, isTablet }}>
