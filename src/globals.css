@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'primereact/resources/themes/saga-blue/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css'; 
+
+:root {
+  --primary-color: #00B788;
+  --secondary-color: #ffffff;
+  --theme-color: #1c1c1c;
+  --primary-font: 'Montserrat', sans-serif;
+  --secondary-font: 'Montserrat Alternates', sans-serif;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+  }
+}
+
+body{
+  color: var(--secondary-color);
+  background-color: var(--theme-color);
+  font-family: var(--primary-font);
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
