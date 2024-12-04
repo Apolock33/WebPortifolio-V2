@@ -2,21 +2,32 @@ import React from 'react'
 import { GlobalProvider } from './contexts/globalContext';
 import Header from './components/elements/header';
 import Home from './components/sections/home';
-import About from './components/sections/about';
-import Expertise from './components/sections/expertise';
-import Formation from './components/sections/formation';
-import Projects from './components/sections/projects';
 import Footer from './components/elements/footer';
+import { Element } from 'react-scroll';
 
 const App = () => {
+
+  const sections = [
+    {
+      id: 1,
+      name: 'Home',
+      component: <Home />
+    },
+    {
+      id: 2,
+      name: 'About',
+      component: <div>Sobre Mim</div>
+    }
+  ]
+
   return (
     <GlobalProvider>
       <Header />
-      <Home />
-      <About />
-      <Expertise />
-      <Formation />
-      <Projects />
+      {sections.map(section =>
+        <Element key={section.id} name={section.name} className='sections'>
+          {section.component}
+        </Element>
+      )}
       <Footer />
     </GlobalProvider>
   )

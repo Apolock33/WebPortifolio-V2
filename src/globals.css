@@ -37,3 +37,10 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
+
+.sections {
+  background-image: url('./assets/imgs/GeographicVector.svg') !important;
+  height: 100vh !important;
+  width: 100% !important;
+  background-size: cover !important;
+}

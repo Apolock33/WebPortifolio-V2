@@ -4,11 +4,10 @@ import { FiMenu } from 'react-icons/fi';
 import { Sidebar } from 'primereact/sidebar';
 import { Link } from 'react-scroll';
 import { GlobalContext } from '../../../contexts/globalContext';
+import Logo from '../../../assets/imgs/Logo.svg';
 
 const Header = () => {
-    const {
-        isMobile
-    } = useContext(GlobalContext);
+    const { isMobile } = useContext(GlobalContext);
     const [openSideMenu, setOpenSideMenu] = useState(false);
 
     const navlinks = [
@@ -40,17 +39,12 @@ const Header = () => {
     ]
 
     return (
-        <header className='flex justify-content-between align-items-center px-5 fixed top-0 w-full z-1'>
+        <header className='flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1'>
             <div>
-                <h1
-                    className='font-extrabold font-italic text-primary'
-                    style={{ fontFamily: "var(--secondary-font)" }}
-                >
-                    {"<CA />"}
-                </h1>
+                <img src={Logo} width={100} />
             </div>
             <div className='flex justify-content-between align-items-center gap-3'>
-                {!isMobile ? <Button
+                {!isMobile && innerWidth >= 768 ? <Button
                     rounded
                     text
                     label='Entre Em Contato'
@@ -70,14 +64,14 @@ const Header = () => {
                 onHide={() => setOpenSideMenu(false)}
                 className='bg-primary generalDiv h-full'
             >
-                <div className='flex flex-column row-gap-3'>
+                <div className='flex flex-column row-gap-5'>
                     {navlinks.map((link) => (
                         <Link
                             smooth
-                            duration={500}
+                            duration={300}
                             to={link.path}
                             key={link.id}
-                            className='text-white text-xl font-medium flex justify-content-center py-3 px-5 hover:bg-white hover:text-primary border-round-lg'
+                            className='text-white text-xl font-medium flex justify-content-center py-3 px-5 hover:bg-white hover:text-primary border-round-3xl'
                             style={{ cursor: 'pointer' }}
                             onClick={() => setOpenSideMenu(false)}
                         >

@@ -5,21 +5,17 @@ const GlobalContext = createContext({});
 const GlobalProvider = ({ children }) => {
     const [width, setWidth] = useState(window.innerWidth);
     const [isMobile, setIsMobile] = useState(false);
-    const [isTablet, setIsTablet] = useState(false);
 
     useEffect(() => {
         setWidth(window.innerWidth);
-        if (width <= 426) {
-            setIsMobile(true);
-        }
 
-        if (width > 426 && width <= 768) {
-            setIsTablet(true);
+        if (width <= 767) {
+            setIsMobile(true);
         }
     });
 
     return (
-        <GlobalContext.Provider value={{ isMobile, isTablet }}>
+        <GlobalContext.Provider value={{ isMobile }}>
             {children}
         </GlobalContext.Provider>
     );
