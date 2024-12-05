@@ -3,7 +3,7 @@
 @import 'primereact/resources/themes/saga-blue/theme.css';
 @import 'primereact/resources/primereact.min.css';
 @import 'primeicons/primeicons.css';
-@import 'primeflex/primeflex.css'; 
+@import 'primeflex/primeflex.css';
 
 :root {
   --primary-color: #00B788;
@@ -13,22 +13,22 @@
   --secondary-font: 'Montserrat Alternates', sans-serif;
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--theme-color);
     border-radius: 5px;
   }
 
 
   ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
-    border-radius: 10px;
+    border-radius: 3px;
   }
 }
 
-body{
+body {
   color: var(--secondary-color);
   background-color: var(--theme-color);
   font-family: var(--primary-font);
@@ -53,6 +53,7 @@ body{
   background-size: cover !important;
 }
 
-.p-dialog-header, .p-dialog-content{
+.p-dialog-header,
+.p-dialog-content {
   background-color: var(--theme-color) !important;
 }

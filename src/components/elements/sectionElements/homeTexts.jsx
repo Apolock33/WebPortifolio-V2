@@ -57,7 +57,7 @@ const HomeTexts = () => {
         <div>
           {socialMedia.map(media => (
             <a key={media.id} href={media.url} target='_blank' rel="noopener noreferrer" className='no-underline text-white mx-2'>
-              <Button icon={() => media.icon} iconPos='right' rounded outlined className='border-primary' />
+              <Button icon={() => media.icon} iconPos='right' rounded outlined className='border-primary outline-none' />
             </a>
           ))}
         </div>

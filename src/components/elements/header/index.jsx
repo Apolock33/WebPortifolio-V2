@@ -39,7 +39,7 @@ const Header = () => {
     ]
 
     return (
-        <header className='flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1'>
+        <header className='flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1 scroll:bg-primary'>
             <div>
                 <img src={Logo} width={100} />
             </div>
