@@ -4,7 +4,7 @@ import { FiMenu } from 'react-icons/fi';
 import { Sidebar } from 'primereact/sidebar';
 import { Link } from 'react-scroll';
 import { GlobalContext } from '../../../contexts/globalContext';
-import Logo from '../../../assets/imgs/Logo.svg';
+import Logo from '../../../assets/imgs/logo.svg';
 
 const Header = () => {
     const { isMobile } = useContext(GlobalContext);
