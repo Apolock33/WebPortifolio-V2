@@ -5,6 +5,7 @@ import { Sidebar } from 'primereact/sidebar';
 import { Link } from 'react-scroll';
 import { GlobalContext } from '../../../contexts/globalContext';
 import Logo from '../../../assets/imgs/logo.svg';
+import { motion } from 'motion/react';
 
 const Header = () => {
     const { isMobile } = useContext(GlobalContext);
@@ -39,10 +40,10 @@ const Header = () => {
     ]
 
     return (
-        <header className='flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1 scroll:bg-primary'>
-            <div>
+        <motion.header className='flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1 scroll:bg-primary' initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}>
+            <motion.div>
                 <img src={Logo} width={100} />
-            </div>
+            </motion.div>
             <div className='flex justify-content-between align-items-center gap-3'>
                 {!isMobile && innerWidth >= 768 ? <Button
                     rounded
@@ -80,7 +81,7 @@ const Header = () => {
                     ))}
                 </div>
             </Sidebar>
-        </header>
+        </motion.header>
     );
 }
 

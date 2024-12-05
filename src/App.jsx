@@ -30,9 +30,7 @@ const App = () => {
 
   return (
     <GlobalProvider>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 2 } }}>
-        <Header />
-      </motion.div>
+      <Header />
       {sections.map(section =>
         <Element key={section.id} name={section.name}>
           {section.component}
