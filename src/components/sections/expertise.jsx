@@ -13,8 +13,13 @@ const Expertise = () => {
 
     const responsiveOptions = [
         {
-            breakpoint: '769px',
+            breakpoint: '1274px',
             numVisible: 2,
+            numScroll: 1
+        },
+        {
+            breakpoint: '769px',
+            numVisible: 3,
             numScroll: 1
         },
         {
@@ -86,33 +91,34 @@ const Expertise = () => {
     return (
         <motion.section id='expertise' className={`flex flex-column align-items-center justify-content-center sections`} initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 1 } }}>
             <div className='flex flex-column justify-content-center text-center my-6'>
-                <motion.h1 className='font-bold text-4xl text-primary m-0 text-center' style={{ fontFamily: 'var(--title-font) !important' }} initial={{ x: 100 }} whileInView={{ x: 0 }}>Experiências Profissionais</motion.h1>
-                <motion.div className="flex justify-content-center" initial={{ x: 100 }} whileInView={{ x: 0 }}>
-                    <p style={{ maxWidth: '50rem' }}>Nomeei algumas de minhas experiências profissionais as quais fui capaz de, não só aprender muito como de aplicar ao máximo meus conhecimentos sobre a área de desenvolvimento full-stack</p>
+                <motion.h1 className={'font-bold text-4xl text-primary m-0 text-center'} style={{ fontFamily: 'var(--title-font) !important' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>Experiências Profissionais</motion.h1>
+                <motion.div className="flex justify-content-center text-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+                    <p className={`w-8`}>Nomeei algumas de minhas experiências profissionais as quais fui capaz de, não só aprender muito como de aplicar ao máximo meus conhecimentos sobre a área de desenvolvimento full-stack</p>
                 </motion.div>
             </div>
             <motion.div initial={{ y: 100 }} whileInView={{ y: 0 }}>
-                <Carousel value={expertises} numScroll={1} responsiveOptions={responsiveOptions} itemTemplate={expertisesTemplate} />
+                <Carousel value={expertises} numScroll={1} numVisible={2}
+                    responsiveOptions={responsiveOptions} itemTemplate={expertisesTemplate} />
             </motion.div>
             {selectedExpertise && (
                 <Dialog
                     modal
                     visible={dialogVisible}
-                    style={{ width: `${isMobile ? '90vw' : '50vw'}` }}
+                    style={{ width: `${isMobile ? '90vw' : '50vw'}`, background: 'var(--theme-color) !important' }}
                     onHide={() => setDialogVisible(false)}
                 >
-                    <div className="p-4 text-primary">
+                    <div className="p-4">
                         <div className="mb-2">
-                            <p className="text-md font-bold">{selectedExpertise.date}</p>
-                            <h2 className="text-3xl font-bold">{selectedExpertise.name}</h2>
+                            <p className="text-md font-bold text-primary">{selectedExpertise.date}</p>
+                            <h2 className="text-3xl font-bold text-primary">{selectedExpertise.name}</h2>
                         </div>
                         <div className="mb-3">
-                            <h3 className="text-lg font-bold">Descrição</h3>
-                            <p>{selectedExpertise.description}</p>
+                            <h3 className="text-lg font-bold text-primary">Descrição</h3>
+                            <p className='text-white'>{selectedExpertise.description}</p>
                         </div>
                         <div>
-                            <h3 className="text-lg font-bold">Atividades</h3>
-                            <ul>
+                            <h3 className="text-lg font-bold text-primary">Atividades</h3>
+                            <ul className='text-white'>
                                 {Object.values(selectedExpertise.activities).map((activity, index) => (
                                     <li key={index} className="mb-2">{activity}</li>
                                 ))}

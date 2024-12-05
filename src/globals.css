@@ -52,3 +52,7 @@ body{
   width: 100% !important;
   background-size: cover !important;
 }
+
+.p-dialog-header, .p-dialog-content{
+  background-color: var(--theme-color) !important;
+}
