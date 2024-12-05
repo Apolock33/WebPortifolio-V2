@@ -118,7 +118,7 @@ const AboutChips = () => {
         <div>
             <div className={`${isMobile && 'text-center'}`}>
                 <motion.h1 className='text-4xl text-primary' style={{ fontFamily: 'var(--title-font)' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>Hard Skills</motion.h1>
-                <motion.div className={`row-gap-3 py-2 ${isMobile ? 'px-4' : 'pr-8'}`} initial={{ y: 100 }} whileInView={{ y: 0 }}>
+                <motion.div className={`row-gap-3 py-2 ${isMobile ? 'px-4' : 'pr-8'}`} initial={{ y: 100 }} whileInView={{ y: 0, duration: 0.5 }}>
                     {hardSkills.map((item) => (
                         <React.Fragment key={item.id}>
                             <Chip label={item.name} icon={() => item.icon} className={`px-3 mb-3 border-round-3xl bg-primary mr-2 gap-2`} />
@@ -129,7 +129,7 @@ const AboutChips = () => {
             </div>
             <div className={`${isMobile && 'text-center'}`}>
                 <motion.h1 className='text-4xl text-primary' style={{ fontFamily: 'var(--title-font)' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>Soft Skills</motion.h1>
-                <motion.div className={`row-gap-3 py-2 ${isMobile ? 'px-4' : 'pr-8'}`} initial={{ y: 100 }} whileInView={{ y: 0 }}>
+                <motion.div className={`row-gap-3 py-2 ${isMobile ? 'px-4' : 'pr-8'}`} initial={{ y: 100 }} whileInView={{ y: 0, duration: 0.5 }}>
                     {softSkills.map((item) => (
                         <React.Fragment key={item.id}>
                             <Chip label={item.name} className={`px-4 py-1 mr-3 border-round-3xl bg-primary gap-2 mb-3`} />

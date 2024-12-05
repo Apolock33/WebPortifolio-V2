@@ -14,13 +14,13 @@ const Home = () => {
       {!isMobile ?
         <>
           <HomeTexts />
-          <motion.div initial={{ y: 100 }} animate={{ y: 0, transition: { duration: 0.5 } }}>
+          <motion.div initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 0.5 } }}>
             <img src={ProfileImage} alt="Carlos A. Gomes" width={isMobile ? 150 : 280} />
           </motion.div>
         </>
         :
         <>
-          <motion.div className='mt-4' initial={{ y: 100 }} animate={{ y: 0, transition: { duration: 0.5 } }}>
+          <motion.div className='mt-4' initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 0.5 } }}>
             <img src={ProfileImage} alt="Carlos A. Gomes" width={isMobile ? 150 : 280} />
           </motion.div>
           <HomeTexts />

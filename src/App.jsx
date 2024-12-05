@@ -7,6 +7,8 @@ import { Element } from 'react-scroll';
 import About from './components/sections/about';
 import Expertise from './components/sections/expertise';
 import { motion } from "motion/react"
+import Formation from './components/sections/formation';
+import Projects from './components/sections/projects';
 
 const App = () => {
 
@@ -25,13 +27,23 @@ const App = () => {
       id: 3,
       name: 'Expertise',
       component: <Expertise />
+    },
+    {
+      id: 4,
+      name: 'Formation',
+      component: <Formation />
+    },
+    {
+      id: 5,
+      name: 'Projects',
+      component: <Projects />
     }
   ]
 
   return (
     <GlobalProvider>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 2 } }}>
-      <Header />
+        <Header />
       </motion.div>
       {sections.map(section =>
         <Element key={section.id} name={section.name}>

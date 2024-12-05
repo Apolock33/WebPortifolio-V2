@@ -32,7 +32,7 @@ const Expertise = () => {
     const expertises = [
         {
             id: 1,
-            name: 'Telecall - Desenvolvedor Full-Stack',
+            name: 'Telecall - Desenvolvedor Full-Stack Pleno',
             date: '05/2022 - 01/2024',
             expertise: 'Javascript/React.JS/C#/.NET',
             description: "Durante minhas formações tive a oportunidade de realizar estágio durante 1 ano e meio na empresa Telecall, onde pude me desenvolver ainda mais nas tecnologias Javascript, React.Js, C#/.Net e muito mais!",
@@ -69,7 +69,7 @@ const Expertise = () => {
     const expertisesTemplate = (expertise) => {
         return (
             <Card
-                title={<h1 className='font-bold text-lg text-primary m-0 hover' style={{ fontFamily: 'var(--title-font) !important' }}>{expertise.name}</h1>}
+                title={<h1 className='font-bold text-lg text-primary hover' style={{ fontFamily: 'var(--title-font) !important' }}>{expertise.name}</h1>}
                 subTitle={expertise.date}
                 footer={
                     <Button
@@ -82,8 +82,8 @@ const Expertise = () => {
                         }}
                     />
                 }
-                className="text-center py-6 border-round-xl min-h-20rem"
-                style={{ background: 'var(--theme-color) !important', padding: '0' }}
+                className="text-center py-5 border-round-xl"
+                style={{ background: 'var(--theme-color) !important' }}
             />
         );
     };
@@ -97,7 +97,7 @@ const Expertise = () => {
                 </motion.div>
             </div>
             <motion.div initial={{ y: 100 }} whileInView={{ y: 0 }}>
-                <Carousel value={expertises} numScroll={1} numVisible={2}
+                <Carousel value={expertises} numScroll={1} numVisible={1}
                     responsiveOptions={responsiveOptions} itemTemplate={expertisesTemplate} />
             </motion.div>
             {selectedExpertise && (

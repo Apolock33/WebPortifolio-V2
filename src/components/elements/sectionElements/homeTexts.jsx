@@ -43,7 +43,7 @@ const HomeTexts = () => {
   ]
 
   return (
-    <motion.div className={isMobile ? 'text-center' : 'text-start'} initial={{ x: -100 }} animate={{ x: 0, transition: { duration: 0.5 } }}>
+    <motion.div className={isMobile ? 'text-center' : 'text-start'} initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 0.5 } }}>
       <h3 className='font-medium text-xl'>Olá, me chamo</h3>
       <h1 className={`font-bold text-primary m-0 ${isMobile ? 'text-3xl' : 'text-5xl'}`} style={{ fontFamily: 'var(--title-font) !important' }}>Carlos Alberto Gomes</h1>
       <h3 className='font-medium text-xl'>Desenvolvedor Full-Stack</h3>
