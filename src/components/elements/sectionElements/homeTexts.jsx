@@ -4,6 +4,7 @@ import { Button } from 'primereact/button';
 import { FaDownload } from 'react-icons/fa';
 import { AiFillBehanceCircle, AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { IoLogoWhatsapp } from 'react-icons/io';
+import { motion } from "motion/react"
 
 const HomeTexts = () => {
   const { isMobile } = useContext(GlobalContext);
@@ -42,13 +43,13 @@ const HomeTexts = () => {
   ]
 
   return (
-    <div className={isMobile ? 'text-center' : 'text-start'}>
+    <motion.div className={isMobile ? 'text-center' : 'text-start'} initial={{ x: -100 }} animate={{ x: 0, transition: { duration: 0.5 } }}>
       <h3 className='font-medium text-xl'>Olá, me chamo</h3>
-      <h1 className='font-bold text-5xl text-primary m-0' style={{ fontFamily: 'var(--title-font) !important' }}>Carlos Alberto Gomes</h1>
+      <h1 className={`font-bold text-primary m-0 ${isMobile ? 'text-3xl' : 'text-5xl'}`} style={{ fontFamily: 'var(--title-font) !important' }}>Carlos Alberto Gomes</h1>
       <h3 className='font-medium text-xl'>Desenvolvedor Full-Stack</h3>
 
-      <div className={isMobile ? 'flex flex-column gap-3 mt-3' : 'flex gap-3 mt-3'	}>
-        <a href={`/Curriculo-Carlos-Alberto-Gomes-Front-End.pdf`} download='Curriculo-Carlos-Alberto-Gomes-Front-End.pdf' className='no-underline text-white'>
+      <div className={isMobile ? 'flex flex-column gap-3 mt-3' : 'flex gap-3 mt-3'}>
+        <a href={`/assets/files/Curriculo-Carlos-Alberto-Gomes-Dev-Full-Stack.pdf`} download='Curriculo-Carlos-Alberto-Gomes-Dev-Full-Stack.pdf' className='no-underline text-white'>
           <Button icon={<FaDownload />} iconPos='right' rounded className='px-3 py-2 gap-3 bg-primary border-none'>
             Baixar Currículo
           </Button>
@@ -56,13 +57,12 @@ const HomeTexts = () => {
         <div>
           {socialMedia.map(media => (
             <a key={media.id} href={media.url} target='_blank' rel="noopener noreferrer" className='no-underline text-white mx-2'>
-              <Button icon={() => media.icon} iconPos='right' rounded outlined className='border-primary'>
-              </Button>
+              <Button icon={() => media.icon} iconPos='right' rounded outlined className='border-primary' />
             </a>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

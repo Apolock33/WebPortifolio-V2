@@ -36,11 +36,19 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .sections {
   background-image: url('./assets/imgs/GeographicVector.svg') !important;
   height: 100vh !important;
+  width: 100% !important;
+  background-size: cover !important;
+}
+
+.about-section {
+  background-image: url('./assets/imgs/GeographicVector.svg') !important;
+  height: 100% !important;
   width: 100% !important;
   background-size: cover !important;
 }
