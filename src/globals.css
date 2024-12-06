@@ -58,10 +58,12 @@ body {
   background-color: var(--theme-color) !important;
 }
 
-.p-dialog-header{
-  color: var(--primary-color) ;
+.p-dialog-header {
+  color: var(--primary-color);
 }
 
 .header-bg {
-  background-color: var(--theme-color);
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(10px);
 }

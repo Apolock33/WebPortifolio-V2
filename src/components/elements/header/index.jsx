@@ -43,7 +43,7 @@ const Header = () => {
 
 
     return (
-        <motion.header className={`flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1 scroll:bg-primary header-bg ${isScrolling ? null : 'bg-transparent'}`} initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}>
+        <motion.header className={`flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1 header-bg`} initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}>
             <motion.div>
                 <img src={Logo} width={100} />
             </motion.div>

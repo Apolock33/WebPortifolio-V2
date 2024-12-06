@@ -45,7 +45,7 @@ const HomeTexts = () => {
   return (
     <motion.div className={isMobile ? 'text-center' : 'text-start'} initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 0.5 } }}>
       <h3 className='font-medium text-xl'>Olá, me chamo</h3>
-      <motion.h1 className={`font-bold text-primary m-0 ${isMobile ? 'text-3xl' : 'text-5xl'}`} style={{ fontFamily: 'var(--title-font) !important' }} whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.95 }}>Carlos Alberto Gomes</motion.h1>
+      <motion.h1 className={`font-bold text-primary m-0 ${isMobile ? 'text-3xl' : 'text-5xl'}`} style={{ fontFamily: 'var(--title-font) !important' }} whileHover={{ scale: 1.1 }} >Carlos Alberto Gomes</motion.h1>
       <h3 className='font-medium text-xl'>Desenvolvedor Full-Stack</h3>
 
       <div className={isMobile ? 'flex flex-column gap-3 mt-3' : 'flex gap-3 mt-3'}>
