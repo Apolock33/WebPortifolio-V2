@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Button } from 'primereact/button';
 import { FiMenu } from 'react-icons/fi';
 import { Sidebar } from 'primereact/sidebar';
@@ -10,6 +10,18 @@ import { motion } from 'motion/react';
 const Header = () => {
     const { isMobile } = useContext(GlobalContext);
     const [openSideMenu, setOpenSideMenu] = useState(false);
+    const [isScrolling, setIsScrolling] = useState(false);
+
+    const keepScrollValue = useMemo(() => {
+        return window.scrollY;
+    }, [scrollY]);
+
+    useEffect(() => {
+        if (keepScrollValue > 300) {
+            setIsScrolling(true);
+            console.log('scrolling');
+        }
+    }, [keepScrollValue])
 
     const navlinks = [
         {
@@ -24,23 +36,14 @@ const Header = () => {
         },
         {
             id: 3,
-            label: 'Experiência Profissional',
-            path: 'expertise'
-        },
-        {
-            id: 4,
-            label: 'Formações',
-            path: 'formation'
-        },
-        {
-            id: 5,
             label: 'Projetos',
             path: 'projects'
         }
     ]
 
+
     return (
-        <motion.header className='flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1 scroll:bg-primary' initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}>
+        <motion.header className={`flex justify-content-between align-items-center px-5 py-3 fixed top-0 w-full z-1 scroll:bg-primary header-bg ${isScrolling ? null : 'bg-transparent'}`} initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}>
             <motion.div>
                 <img src={Logo} width={100} />
             </motion.div>

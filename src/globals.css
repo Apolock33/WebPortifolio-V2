@@ -57,3 +57,11 @@ body {
 .p-dialog-content {
   background-color: var(--theme-color) !important;
 }
+
+.p-dialog-header{
+  color: var(--primary-color) ;
+}
+
+.header-bg {
+  background-color: var(--theme-color);
+}

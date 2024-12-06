@@ -112,17 +112,17 @@ const AboutChips = () => {
 
     return (
         <div className={`${!isMobile && 'flex align-items-center justify-content-center'}`}>
-            <div className={isMobile && 'text-center'}>
-                <motion.h1 className='text-4xl text-primary' style={{ fontFamily: 'var(--title-font)' }} initial={{ y: 100, opacity: 0 }} whileInView={{ y: 0,opacity: 1, transition: {duration: 0.2, delay: 0.5 } }}>Hard Skills</motion.h1>
-            <motion.div className={`row-gap-3 py-2 ${isMobile ? 'px-4' : 'min-w-30rem'}`} initial={{ y: 100, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { duration: 1, delay: 0.15 } }}>
-                {hardSkills.map((item) => (
-                    <React.Fragment key={item.id}>
-                        <Chip label={item.name} icon={() => item.icon} className={`px-3 py-1 mx-1 mb-3 border-round-3xl bg-primary gap-2 ${!isMobile && 'font-medium text-2xl'}`} />
-                        {(item.hasMargin) && <br />}
-                    </React.Fragment>
-                ))}
-            </motion.div>
-        </div>
+            <div className={`${isMobile && 'text-center'}`}>
+                <motion.h1 className='text-4xl text-primary' style={{ fontFamily: 'var(--title-font)' }} initial={{ y: 100, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { duration: 0.2, delay: 0.5 } }}>Hard Skills</motion.h1>
+                <motion.div className={`grid row-gap-3 gap-5 py-2 ${isMobile ? 'px-4' : 'max-w-30rem'}`} initial={{ y: 100, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { duration: 1, delay: 0.15 } }}>
+                    {hardSkills.map((item) => (
+                        <motion.div key={item.id} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className='cursor-pointer'>
+                            <Chip label={item.name} icon={() => item.icon} className={`px-3 mx-1 mb-3 border-round-3xl bg-primary gap-2 ${!isMobile && 'font-medium text-2xl'}`} />
+                            {(item.hasMargin) && <br />}
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
         </div >
     )
 }
