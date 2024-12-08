@@ -48,12 +48,13 @@ const ProjectCardsTable = () => {
     ];
 
     return (
-        <motion.div className={`grid gap-5 ${isMobile ? 'flex-column' : 'flex-row'} justify-content-center align-items-center pb-5`} initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 0.5 } }}>
+        <motion.div className={`grid mx-0 gap-3 justify-content-center align-items-center row-gap-4 pb-6`} initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 0.5 } }}>
             {projects.map((project) => (
                 <motion.div
                     key={project.id}
-                    className="w-full relative border-round-2xl overflow-hidden"
-                    style={{ aspectRatio: '16 / 9', maxWidth: `${isMobile ? '80%' : '40rem'}` }}
+                    className="border-round-2xl overflow-hidden"
+                    style={{ aspectRatio: '16 / 9',
+                         maxWidth: `${isMobile ? '70%' : '35rem'}` }}
                     onClick={() => {
                         setSelectedProject(project);
                         setOpenProjectModal(true);
@@ -119,7 +120,6 @@ const ProjectCardsTable = () => {
                                     <Button
                                         href={selectedProject.url}
                                         target="_blank"
-                                        rel="noopener noreferrer"
                                         style={{ color: '#007bff', textDecoration: 'none' }}
                                         className='bg-primary border-none border-round-lg gap-2'
                                         icon={() => <FaLink size={20} />}
@@ -133,7 +133,6 @@ const ProjectCardsTable = () => {
                                     <Button
                                         href={selectedProject?.repository}
                                         target="_blank"
-                                        rel="noopener noreferrer"
                                         style={{ color: '#007bff', textDecoration: 'none' }}
                                         className='bg-primary border-none border-round-lg gap-2'
                                         icon={() => <FaGithub size={20} />}
