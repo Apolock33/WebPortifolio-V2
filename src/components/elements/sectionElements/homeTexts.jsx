@@ -44,13 +44,13 @@ const HomeTexts = () => {
 
   return (
     <motion.div className={isMobile ? 'text-center' : 'text-start'} initial={{ y: 100 }} whileInView={{ y: 0, transition: { duration: 0.5 } }}>
-      <h3 className='font-medium text-xl'>Olá, me chamo</h3>
-      <motion.h1 className={`font-bold text-primary m-0 ${isMobile ? 'text-3xl' : 'text-5xl'}`} style={{ fontFamily: 'var(--title-font) !important' }} whileHover={{ scale: 1.1 }} >Carlos Alberto Gomes</motion.h1>
-      <h3 className='font-medium text-xl'>Desenvolvedor Full-Stack</h3>
+      <h3 className='font-medium text-2xl'>Olá, me chamo</h3>
+      <motion.h1 className={`font-bold text-primary m-0 ${isMobile ? 'text-3xl' : 'text-6xl'}`} style={{ fontFamily: 'var(--title-font) !important' }} whileHover={{ scale: 1.1 }} >Carlos Alberto Gomes</motion.h1>
+      <h3 className='font-medium text-2xl'>Desenvolvedor Full-Stack</h3>
 
       <div className={isMobile ? 'flex flex-column gap-3 mt-3' : 'flex gap-3 mt-3'}>
         <motion.a href={`/assets/files/Curriculo-Carlos-Alberto-Gomes-Dev-Full-Stack.pdf`} download='Curriculo-Carlos-Alberto-Gomes-Dev-Full-Stack.pdf' className='no-underline text-white' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          <Button icon={<FaDownload />} iconPos='right' rounded className='px-3 py-2 gap-3 bg-primary border-none'>
+          <Button icon={<FaDownload />} iconPos='right' rounded className='px-3 py-2 gap-3 bg-primary border-none text-xl'>
             Baixar Currículo
           </Button>
         </motion.a>

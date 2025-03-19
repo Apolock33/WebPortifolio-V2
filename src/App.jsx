@@ -5,7 +5,7 @@ import Home from './components/sections/home';
 import Footer from './components/elements/footer';
 import { Element } from 'react-scroll';
 import About from './components/sections/about';
-import { motion } from "motion/react"
+import Carrer from './components/sections/career';
 import Projects from './components/sections/projects';
 
 const App = () => {
@@ -22,7 +22,12 @@ const App = () => {
       component: <About />
     },
     {
-      id: 5,
+      id: 4,
+      name: 'Carrer',
+      component: <Carrer />
+    },
+    {
+      id: 4,
       name: 'Projects',
       component: <Projects />
     }

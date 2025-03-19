@@ -46,6 +46,10 @@ body {
   background-size: cover !important;
 }
 
+.gapper-class{
+  gap: 20% !important;
+}
+
 .about-section {
   background-image: url('./assets/imgs/GeographicVector.svg') !important;
   height: 100% !important;
