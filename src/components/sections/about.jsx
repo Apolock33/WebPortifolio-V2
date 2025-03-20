@@ -27,7 +27,7 @@ const About = () => {
                     <motion.img
                         src={photos}
                         alt='Familia'
-                        width={isMobile ? 350 : 400}
+                        width={isMobile ? 300 : 400}
                         className={`${isMobile ? 'mt-4' : 'mt-0'}`}
                         initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 1 } }}
                     />

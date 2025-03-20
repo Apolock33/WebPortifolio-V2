@@ -14,81 +14,81 @@ const AboutChips = () => {
         {
             id: 1,
             name: 'Javascript',
-            icon: <AiOutlineJavaScript size={30} />
+            icon: <AiOutlineJavaScript size={isMobile? 30: 55} />
         },
         {
             id: 2,
             name: 'Typescript',
-            icon: <BiLogoTypescript size={30} />
+            icon: <BiLogoTypescript size={isMobile? 30: 55} />
         },
         {
             id: 3,
             name: 'React.JS',
-            icon: < FaReact size={30} />,
+            icon: < FaReact size={isMobile? 30: 55} />,
             hasMargin: true
         },
         {
             id: 4,
             name: 'React Native',
-            icon: <TbBrandReactNative size={30} />
+            icon: <TbBrandReactNative size={isMobile? 30: 55} />
         },
         {
             id: 5,
             name: 'Next.JS',
-            icon: <TbBrandNextjs size={30} />
+            icon: <TbBrandNextjs size={isMobile? 30: 55} />
         },
         {
             id: 6,
             name: 'Node.JS',
-            icon: <FaNodeJs size={30} />
+            icon: <FaNodeJs size={isMobile? 30: 55} />
         },
         {
             id: 8,
             name: 'C#/.NET',
-            icon: <AiOutlineDotNet size={30} />,
+            icon: <AiOutlineDotNet size={isMobile? 30: 55} />,
             hasMargin: true
         },
         {
             id: 9,
             name: 'AWS',
-            icon: <FaAws size={30} />
+            icon: <FaAws size={isMobile? 30: 55} />
         },
         {
             id: 10,
             name: 'Postman',
-            icon: <SiPostman size={30} />
+            icon: <SiPostman size={isMobile? 30: 55} />
         },
         {
             id: 11,
             name: 'SQL Server',
-            icon: <SiMicrosoftsqlserver size={30} />
+            icon: <SiMicrosoftsqlserver size={isMobile? 30: 55} />
         },
         {
             id: 12,
             name: 'MySQL',
-            icon: <SiMysql size={30} />,
+            icon: <SiMysql size={isMobile? 30: 55} />,
             hasMargin: true
         },
         {
             id: 13,
             name: 'MongoDB',
-            icon: <SiMongodb size={30} />
+            icon: <SiMongodb size={isMobile? 30: 55} />
         },
         {
             id: 14,
             name: 'Git/Etc',
-            icon: <FaGitAlt size={30} />
+            icon: <FaGitAlt size={isMobile? 30: 55} />
         },
         {
             id: 15,
             name: 'Docker',
-            icon: <FaDocker size={30} />
+            icon: <FaDocker size={isMobile? 30: 55} />
         }
     ];
 
     return (
         <div className={`${!isMobile && 'flex align-items-center justify-content-center'}`}>
-            <div className={`${isMobile ? 'text-center' : null}`}>
+            <div className={`text-center`}>
                 <motion.h1
                     className='text-4xl text-primary'
                     style={{ fontFamily: 'var(--title-font)' }}
@@ -98,7 +98,7 @@ const AboutChips = () => {
                     className='grid'
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1, transition: { duration: 1, delay: 0.15 } }}
-                    style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: '0.5rem', rowGap: '1rem' }}
+                    style={{ display: 'grid', gridTemplateColumns: `repeat(${isMobile ? '4': '5'}, minmax(0, 1fr))`, gap: '0.5rem', rowGap: '1rem' }}
                 >
                     {hardSkills.map((item) => (
                         <motion.div
@@ -107,15 +107,15 @@ const AboutChips = () => {
                             style={{
                                 color: 'var(--secondary-color)',
                                 textAlign: 'center',
-                                width: `${isMobile ? '100%' : '120px'}`,
-                                height: `${isMobile ? '100%' : '120px'}`
+                                width: `${isMobile ? '100%' : '200px'}`,
+                                height: `${isMobile ? '100%' : '200px'}`
                             }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             transition={{ duration: 0.2 }}
                         >
                             {item.icon}
-                            <p className='my-2' style={{ fontSize: '0.8rem' }}>{item.name}</p>
+                            <p className='my-2' style={{ fontSize: `${isMobile? '0.8rem': '1.3rem'}` }}>{item.name}</p>
                         </motion.div>
                     ))}
                 </motion.div>

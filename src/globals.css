@@ -75,3 +75,21 @@ body {
 .p-carousel {
   flex: unset !important;
 }
+
+.p-tag-success{
+  background-color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.magin-setter{
+  margin-left: 70px !important;
+}
+
+.p-timeline-event-marker{
+  border: none;
+  background-color: var(--primary-color);
+}
+
+.p-timeline .p-timeline-event-connector {
+  background-color: var(--primary-color);
+}

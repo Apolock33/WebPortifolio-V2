@@ -7,6 +7,7 @@ import { Element } from 'react-scroll';
 import About from './components/sections/about';
 import Carrer from './components/sections/career';
 import Projects from './components/sections/projects';
+import HardSkills from './components/sections/hardSkills';
 
 const App = () => {
 
@@ -22,12 +23,17 @@ const App = () => {
       component: <About />
     },
     {
-      id: 3,
+      id:3,
+      name: 'HardSkills',
+      component: <HardSkills />
+    },
+    {
+      id: 4,
       name: 'Carrer',
       component: <Carrer />
     },
     {
-      id: 4,
+      id: 5,
       name: 'Projects',
       component: <Projects />
     }

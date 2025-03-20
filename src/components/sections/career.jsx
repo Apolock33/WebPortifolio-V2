@@ -1,11 +1,81 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Timeline } from 'primereact/timeline';
+import { Button } from 'primereact/button';
 import { motion } from "motion/react";
 import { GlobalContext } from '../../contexts/globalContext';
-import AboutChips from '../elements/sectionElements/aboutChips';
+import { FaBookOpen } from 'react-icons/fa';
+import { FaSuitcase } from 'react-icons/fa6';
 
 const Career = () => {
-
     const { isMobile } = useContext(GlobalContext);
+    const [isFormationOrCareer, setIsFormationOrCareer] = useState(0);
+
+    const eventsFormation = [
+        {
+            id: 1,
+            status: "Completo",
+            date: "2020 - 2021",
+            icon: "pi pi-check",
+            name: "RECODE PRO",
+            course: "Bootcamp",
+            className: `p-tag w-6 flex justify-content-center text-md`
+        },
+        {
+            id: 2,
+            status: "Completo",
+            date: "2022 - 2024",
+            name: "UNISUAM",
+            course: "Analise e Desenvolvimento de Sistemas",
+            className: 'p-tag w-6 flex justify-content-center text-md  magin-setter'
+        },
+        {
+            id: 3,
+            status: "Cursando",
+            date: "2024 - 2025",
+            name: "UNIAMERICA",
+            course: "Engenharia de Software",
+            className: `p-tag w-6 flex justify-content-center text-md`
+        }
+    ];
+
+    const eventsCarer = [
+        {
+            id: 1,
+            date: "2022 - 2023",
+            position: "Dev. Estagiário",
+            company: "Telecall - Multinacional",
+        },
+        {
+            id: 2,
+            date: "2023 - 2024",
+            position: "Analista de Sistemas",
+            company: "Telecall - Multinacional",
+        },
+        {
+            id: 3,
+            date: "2025 - Agora",
+            position: "Instrutor",
+            company: "Autonomo",
+        }
+    ]
+
+    const contentTemplate = (data) => {
+        return (
+            (isFormationOrCareer == 0) ?
+                <div className="text-lg">
+                    <p>{data.date}</p>
+                    <h3 className='text-xl text-primary'>{data.name}</h3>
+                    <p>{data.course}</p>
+                    <p className={`${(data?.status == 'Completo') ? 'p-tag-success' : 'p-tag-warning'} ${data?.className}`}>{data.status}</p>
+                </div>
+                :
+                <div className="text-lg">
+                    <p>{data.date}</p>
+                    <h3 className='text-xl text-primary'>{data.position}</h3>
+                    <p>{data.company}</p>
+                </div>
+        );
+    }
 
     return (
         <motion.section
@@ -13,42 +83,46 @@ const Career = () => {
             className={`flex align-items-center justify-content-center sections ${isMobile ? 'flex-column' : null}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 1 } }}
-            style={{ gap: '20%' }}>
-            <div className={`${isMobile ? 'p-4' : 'p-3'}`}>
-                <AboutChips />
+        >
+            <div className={'text-center p-4'}>
+                <motion.h1 className={`text-4xl text-primary ${isMobile && 'text-center'}`} style={{ fontFamily: 'var(--title-font)' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 1 } }}>
+                    Qualificações
+                </motion.h1>
+                <div className='my-6 flex justify-content-center gap-5'>
+                    <motion.a
+                        className='no-underline mx-2'
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => setIsFormationOrCareer(0)}>
+                        <Button
+                            icon={() => <FaBookOpen size={25} />}
+                            iconPos='right'
+                            rounded
+                            outlined
+                            className='border-primary text-white outline-none gap-3 text-xl'>
+                            Formação
+                        </Button>
+                    </motion.a>
+                    <motion.a
+                        className='no-underline mx-2'
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => setIsFormationOrCareer(1)}>
+                        <Button
+                            icon={() => <FaSuitcase size={25} />}
+                            iconPos='right'
+                            rounded
+                            outlined
+                            className='border-primary text-white outline-none gap-3 text-xl'>
+                            Carreira
+                        </Button>
+                    </motion.a>
+                </div>
+                <div>
+                    <Timeline value={(isFormationOrCareer == 0) ? eventsFormation : eventsCarer} align="alternate" content={contentTemplate} className="w-full" />
+                </div>
             </div>
-            <div className={isMobile ? 'text-center' : 'p-4'}>
-                {isMobile ? null : <>
-                    <motion.h1 className={`text-4xl text-primary ${isMobile && 'text-center'}`} style={{ fontFamily: 'var(--title-font)' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 1 } }}>
-                        Carreira
-                    </motion.h1>
-                    <motion.h2
-                        className={` text-xl text-primary ${isMobile ? 'text-center min-w-30rem' : 'text-start max-w-30rem'}`}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1, transition: { duration: 1 } }}>
-                        ANALISTA DE SISTEMAS
-                    </motion.h2>
-                    <motion.p
-                        className={` text-xl text-secondary ${isMobile ? 'text-center min-w-30rem' : 'text-start max-w-30rem'}`}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1, transition: { duration: 1 } }}>
-                        Telecall (Multinacional) Mai. 2022 - Mai. de 2024
-                    </motion.p>
-                    <ul>
-                        <motion.p className={`text-xl ${isMobile ? 'text-center min-w-30rem' : 'text-start max-w-30rem'}`} initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 1 } }}>
-                            <em>Competências:</em><br />
-
-                            <li>Desenvolvimento e manutenção de sistemas pessoais da empresa utilizando React.js, .Net e SQL Server, com foco em performance e escalabilidade.</li>
-                            <li>Desenvolvi interfaces, protótipos e wireframes para novos projetos da empresa através da ferramenta Figma, Adobe Photoshop e Illustrator.</li>
-                            <li>Desenvolvi interfaces dinâmicas, responsivas e otimizadas com React.js, focando na experiência do usuário.</li>
-                            <li>Realizei geração de relatórios para insights e acompanhamento</li>
-
-                        </motion.p>
-                    </ul>
-                </>
-                }
-            </div>
-        </motion.section>
+        </motion.section >
     )
 }
 
