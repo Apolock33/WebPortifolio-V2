@@ -178,7 +178,7 @@ const ProjectCardsTable = () => {
                 onClose={() => setOpenProjectModal(false)}
                 cover={selectedProject?.cover}
             >
-                <div className={`${isMobile ? 'text-center' : 'mx-8'}`}>
+                <div className={`${isMobile ? 'text-center mx-2' : 'mx-8'}`}>
                     <h1 className={`m-0 text-primary ${isMobile ? ' text-xl' : 'text-3xl'}`}>{selectedProject?.name}</h1>
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
