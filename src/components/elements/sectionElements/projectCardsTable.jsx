@@ -183,7 +183,7 @@ const ProjectCardsTable = () => {
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
                     <p className={`text-secondary max-w-28rem ${isMobile ? 'text-sm mx-3' : 'text-lg'}`}>{selectedProject?.description}</p>
-                    <div className={`flex flex-row align-items-center gap-3 pt-3 ${isMobile ? 'justify-content-center' : 'justify-content-center'}`}>
+                    <div className={`flex flex-row align-items-center gap-1 mt-4 ${isMobile ? 'justify-content-center' : 'justify-content-center'}`}>
                         {selectedProject?.url && (
                             <motion.a
                                 href={selectedProject.url} target="_blank"
