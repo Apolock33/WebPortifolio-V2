@@ -26,11 +26,11 @@ const App = () => {
       name: 'Carrer',
       component: <Carrer />
     },
-    {
-      id: 4,
-      name: 'Projects',
-      component: <Projects />
-    }
+    // {
+    //   id: 4,
+    //   name: 'Projects',
+    //   component: <Projects />
+    // }
   ]
 
   return (
