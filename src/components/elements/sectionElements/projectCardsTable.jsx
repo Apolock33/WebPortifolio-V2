@@ -172,7 +172,7 @@ const ProjectCardsTable = () => {
                 </motion.div>
             ))}
 
-            {/* <ProjectsDialog
+            <ProjectsDialog
                 show={openProjectModal}
                 images={selectedProject?.gallery}
                 onClose={() => setOpenProjectModal(false)}
@@ -228,7 +228,7 @@ const ProjectCardsTable = () => {
                         )}
                     </div>
                 </div>
-            </ProjectsDialog> */}
+            </ProjectsDialog>
         </motion.div >
 
     );
