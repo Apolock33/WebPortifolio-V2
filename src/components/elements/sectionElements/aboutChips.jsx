@@ -14,75 +14,75 @@ const AboutChips = () => {
         {
             id: 1,
             name: 'Javascript',
-            icon: <AiOutlineJavaScript size={isMobile? 30: 55} />
+            icon: <AiOutlineJavaScript size={isMobile? 30: 45} />
         },
         {
             id: 2,
             name: 'Typescript',
-            icon: <BiLogoTypescript size={isMobile? 30: 55} />
+            icon: <BiLogoTypescript size={isMobile? 30: 45} />
         },
         {
             id: 3,
             name: 'React.JS',
-            icon: < FaReact size={isMobile? 30: 55} />,
+            icon: < FaReact size={isMobile? 30: 45} />,
             hasMargin: true
         },
         {
             id: 4,
             name: 'React Native',
-            icon: <TbBrandReactNative size={isMobile? 30: 55} />
+            icon: <TbBrandReactNative size={isMobile? 30: 45} />
         },
         {
             id: 5,
             name: 'Next.JS',
-            icon: <TbBrandNextjs size={isMobile? 30: 55} />
+            icon: <TbBrandNextjs size={isMobile? 30: 45} />
         },
         {
             id: 6,
             name: 'Node.JS',
-            icon: <FaNodeJs size={isMobile? 30: 55} />
+            icon: <FaNodeJs size={isMobile? 30: 45} />
         },
         {
             id: 8,
             name: 'C#/.NET',
-            icon: <AiOutlineDotNet size={isMobile? 30: 55} />,
+            icon: <AiOutlineDotNet size={isMobile? 30: 45} />,
             hasMargin: true
         },
         {
             id: 9,
             name: 'AWS',
-            icon: <FaAws size={isMobile? 30: 55} />
+            icon: <FaAws size={isMobile? 30: 45} />
         },
         {
             id: 10,
             name: 'Postman',
-            icon: <SiPostman size={isMobile? 30: 55} />
+            icon: <SiPostman size={isMobile? 30: 45} />
         },
         {
             id: 11,
             name: 'SQL Server',
-            icon: <SiMicrosoftsqlserver size={isMobile? 30: 55} />
+            icon: <SiMicrosoftsqlserver size={isMobile? 30: 45} />
         },
         {
             id: 12,
             name: 'MySQL',
-            icon: <SiMysql size={isMobile? 30: 55} />,
+            icon: <SiMysql size={isMobile? 30: 45} />,
             hasMargin: true
         },
         {
             id: 13,
             name: 'MongoDB',
-            icon: <SiMongodb size={isMobile? 30: 55} />
+            icon: <SiMongodb size={isMobile? 30: 45} />
         },
         {
             id: 14,
             name: 'Git/Etc',
-            icon: <FaGitAlt size={isMobile? 30: 55} />
+            icon: <FaGitAlt size={isMobile? 30: 45} />
         },
         {
             id: 15,
             name: 'Docker',
-            icon: <FaDocker size={isMobile? 30: 55} />
+            icon: <FaDocker size={isMobile? 30: 45} />
         }
     ];
 
@@ -107,8 +107,8 @@ const AboutChips = () => {
                             style={{
                                 color: 'var(--secondary-color)',
                                 textAlign: 'center',
-                                width: `${isMobile ? '100%' : '200px'}`,
-                                height: `${isMobile ? '100%' : '200px'}`
+                                width: `${isMobile ? '100%' : '150px'}`,
+                                height: `${isMobile ? '100%' : '150px'}`
                             }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}

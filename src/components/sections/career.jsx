@@ -62,16 +62,15 @@ const Career = () => {
     const contentTemplate = (data) => {
         return (
             (isFormationOrCareer == 0) ?
-                <div className="text-lg">
+                <div className="text-md">
                     <p>{data.date}</p>
-                    <h3 className='text-xl text-primary'>{data.name}</h3>
+                    <h3 className='text-lg text-primary'>{data.name}</h3>
                     <p>{data.course}</p>
-                    <p className={`${(data?.status == 'Completo') ? 'p-tag-success' : 'p-tag-warning'} ${data?.className}`}>{data.status}</p>
                 </div>
                 :
-                <div className="text-lg">
+                <div className="text-md">
                     <p>{data.date}</p>
-                    <h3 className='text-xl text-primary'>{data.position}</h3>
+                    <h3 className='text-lg text-primary my-0'>{data.position}</h3>
                     <p>{data.company}</p>
                 </div>
         );
@@ -88,18 +87,18 @@ const Career = () => {
                 <motion.h1 className={`text-4xl text-primary ${isMobile && 'text-center'}`} style={{ fontFamily: 'var(--title-font)' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                     Qualificações
                 </motion.h1>
-                <div className='my-6 flex justify-content-center gap-5'>
+                <div className='my-3 flex justify-content-center gap-5'>
                     <motion.a
                         className='no-underline mx-2'
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsFormationOrCareer(0)}>
                         <Button
-                            icon={() => <FaBookOpen size={25} />}
+                            icon={() => <FaBookOpen size={20} />}
                             iconPos='right'
                             rounded
                             outlined
-                            className='border-primary text-white outline-none gap-3 text-xl'>
+                            className='border-primary text-white outline-none gap-3 text-sm'>
                             Formação
                         </Button>
                     </motion.a>
@@ -109,11 +108,11 @@ const Career = () => {
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsFormationOrCareer(1)}>
                         <Button
-                            icon={() => <FaSuitcase size={25} />}
+                            icon={() => <FaSuitcase size={20} />}
                             iconPos='right'
                             rounded
                             outlined
-                            className='border-primary text-white outline-none gap-3 text-xl'>
+                            className='border-primary text-white outline-none gap-3 text-sm'>
                             Carreira
                         </Button>
                     </motion.a>
