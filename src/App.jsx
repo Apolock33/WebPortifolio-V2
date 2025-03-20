@@ -11,11 +11,11 @@ import Projects from './components/sections/projects';
 const App = () => {
 
   const sections = [
-    {
-      id: 1,
-      name: 'Home',
-      component: <Home />
-    },
+    // {
+    //   id: 1,
+    //   name: 'Home',
+    //   component: <Home />
+    // },
     {
       id: 2,
       name: 'About',
@@ -26,11 +26,11 @@ const App = () => {
       name: 'Carrer',
       component: <Carrer />
     },
-    // {
-    //   id: 4,
-    //   name: 'Projects',
-    //   component: <Projects />
-    // }
+    {
+      id: 4,
+      name: 'Projects',
+      component: <Projects />
+    }
   ]
 
   return (
