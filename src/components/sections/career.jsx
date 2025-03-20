@@ -62,17 +62,37 @@ const Career = () => {
     const contentTemplate = (data) => {
         return (
             (isFormationOrCareer == 0) ?
-                <div className="text-md">
-                    <p>{data.date}</p>
-                    <h3 className='text-lg text-primary'>{data.name}</h3>
-                    <p>{data.course}</p>
-                </div>
+                <motion.div
+                    className="text-md"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 1 } }}>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 1 } }}>{data.date}</motion.p>
+                    <motion.h3
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 1 } }}
+                        className='text-lg text-primary'>{data.name}</motion.h3>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 1 } }}>{data.course}</motion.p>
+                </motion.div>
                 :
-                <div className="text-md">
-                    <p>{data.date}</p>
-                    <h3 className='text-lg text-primary my-0'>{data.position}</h3>
-                    <p>{data.company}</p>
-                </div>
+                <motion.div
+                    className="text-md"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 1 } }}>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 1 } }}>{data.date}</motion.p>
+                    <motion.h3
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 1 } }}
+                        className='text-lg text-primary my-0'>{data.position}</motion.h3>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 1 } }}>{data.company}</motion.p>
+                </motion.div >
         );
     }
 
@@ -81,13 +101,15 @@ const Career = () => {
             id='career'
             className={`flex align-items-center justify-content-center sections ${isMobile ? 'flex-column' : null}`}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 1 } }}
-        >
+            animate={{ opacity: 1, transition: { duration: 1 } }}>
             <div className={'text-center p-4'}>
                 <motion.h1 className={`text-4xl text-primary ${isMobile && 'text-center'}`} style={{ fontFamily: 'var(--title-font)' }} initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { duration: 1 } }}>
                     Qualificações
                 </motion.h1>
-                <div className='my-3 flex justify-content-center gap-5'>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 1 } }}
+                    className='my-3 flex justify-content-center gap-5'>
                     <motion.a
                         className='no-underline mx-2'
                         whileHover={{ scale: 1.1 }}
@@ -116,7 +138,7 @@ const Career = () => {
                             Carreira
                         </Button>
                     </motion.a>
-                </div>
+                </motion.div>
                 <div>
                     <Timeline value={(isFormationOrCareer == 0) ? eventsFormation : eventsCarer} align="alternate" content={contentTemplate} className="w-full" />
                 </div>
