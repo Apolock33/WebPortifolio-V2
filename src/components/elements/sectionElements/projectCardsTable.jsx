@@ -1,12 +1,19 @@
 import React, { useContext, useState } from 'react'
 import { GlobalContext } from '../../../contexts/globalContext';
-import jawGamesCover from '../../../assets/imgs/jawgames.png';
-import tmdbCover from '../../../assets/imgs/tmdbcover.png';
-import applyLandingPage from '../../../assets/imgs/applylandingpage.png';
+import jawGamesCover from '../../../assets/imgs/jawgames/jawgames.png';
+import jawGamesImg1 from '../../../assets/imgs/jawgames/jawgamespag1.png';
+import jawGamesImg2 from '../../../assets/imgs/jawgames/jawgamespag2.png';
+import jawGamesImg3 from '../../../assets/imgs/jawgames/jawgamespag3.png';
+import tmdbCover from '../../../assets/imgs/tmdb/tmdbcover.png';
+import tmdbPag1 from '../../../assets/imgs/tmdb/tmdbpag1.png';
+import tmdbPag2 from '../../../assets/imgs/tmdb/tmdbpag2.png';
+import tmdbPag3 from '../../../assets/imgs/tmdb/tmdbpag3.png';
+import applyLandingPage from '../../../assets/imgs/apply/applylandingpage.png';
 import { motion } from "motion/react"
-import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
-import { FaGithub, FaLink } from 'react-icons/fa6';
+import { FaEye, FaGithub, FaLink } from 'react-icons/fa6';
+import ProjectsDialog from './projectsDialog';
+import { IoEyeSharp } from 'react-icons/io5';
 
 const ProjectCardsTable = () => {
     const { isMobile } = useContext(GlobalContext);
@@ -21,7 +28,29 @@ const ProjectCardsTable = () => {
             description: 'Este é um projeto da qual participei do desenvolvimento durante meu período na companhia Telecall. A jaw games tem a intenção de ser um portal de assinatura, semelhante a uma streaming, para jogos. Um competidor bem forte da Xbox Game Pass!',
             url: 'https://www.jaw.games/',
             date: 'Julho/2024',
-            tecnologies: 'React.JS | C# | .NET'
+            tecnologies: 'React.JS | C# | .NET',
+            gallery: [
+                {
+                    id: 1,
+                    img: jawGamesCover,
+                    name: 'Jaw Games 1'
+                },
+                {
+                    id: 2,
+                    img: jawGamesImg1,
+                    name: 'Jaw Games 2'
+                },
+                {
+                    id: 3,
+                    img: jawGamesImg2,
+                    name: 'Jaw Games 3'
+                },
+                {
+                    id: 4,
+                    img: jawGamesImg3,
+                    name: 'Jaw Games 4'
+                }
+            ]
         },
         {
             id: 2,
@@ -32,7 +61,28 @@ const ProjectCardsTable = () => {
             repository: 'https://github.com/Apolock33/CMDB-Projeto-de-Filmes',
             date: 'Fevereiro/2024',
             tecnologies: "React.JS | Consumo de API's",
-            gallery: []
+            gallery: [
+                {
+                    id: 1,
+                    img: tmdbCover,
+                    name: 'Movie DB 1'
+                },
+                {
+                    id: 2,
+                    img: tmdbPag1,
+                    name: 'Movie DB 2'
+                },
+                {
+                    id: 3,
+                    img: tmdbPag2,
+                    name: 'Movie DB 3'
+                },
+                {
+                    id: 4,
+                    img: tmdbPag3,
+                    name: 'Movie DB 4'
+                }
+            ]
         },
         {
             id: 3,
@@ -43,7 +93,18 @@ const ProjectCardsTable = () => {
             url: 'https://landingpage-apply-portifolio.vercel.app',
             repository: 'https://github.com/Apolock33/landingpage-apply-portifolio',
             tecnologies: "Next.JS | SPA's | TailwindCSS",
-            gallery: []
+            gallery: [
+                {
+                    id: 1,
+                    img: applyLandingPage,
+                    name: 'Apply 1'
+                },
+                {
+                    id: 2,
+                    img: jawGamesImg1,
+                    name: 'Apply 2'
+                }
+            ]
         },
     ];
 
@@ -53,8 +114,10 @@ const ProjectCardsTable = () => {
                 <motion.div
                     key={project.id}
                     className="border-round-2xl overflow-hidden"
-                    style={{ aspectRatio: '16 / 9',
-                         maxWidth: `${isMobile ? '70%' : '35rem'}` }}
+                    style={{
+                        aspectRatio: '16 / 9',
+                        maxWidth: `${isMobile ? '70%' : '35rem'}`
+                    }}
                     onClick={() => {
                         setSelectedProject(project);
                         setOpenProjectModal(true);
@@ -89,62 +152,83 @@ const ProjectCardsTable = () => {
                         <h3 className={`m-0 z-1 text-primary ${isMobile ? 'text-lg' : 'text-2xl'}`}>{project.name}</h3>
                         <p className={!isMobile ? 'font-medium text-xl' : 'text-sm'}>{project.date}</p>
                         <p className={!isMobile ? 'font-medium text-xl' : 'text-sm'}>{project.tecnologies}</p>
-                        <motion.button
+                        <motion.a
+                            className='no-underline text-white mx-2'
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
-                            className={`bg-primary border-round-3xl border-none cursor-pointer px-3 py-1 ${isMobile ? 'text-sm' : 'text-lg'}`} style={{ fontFamily: 'var(--title-font) !important' }}
-                            onClick={() => {
-                                setSelectedProject(project);
-                                setOpenProjectModal(true);
-                            }}
                         >
-                            Saiba Mais
-                        </motion.button>
+                            <Button
+                                href={selectedProject?.repository}
+                                target="_blank" rounded
+                                outlined
+                                className='border-primary border-round-3xl gap-2 font-bold'
+                                style={{ color: '#00b788' }}
+                                icon={() => <IoEyeSharp size={20} />}
+                            >
+                                Saiba Mais
+                            </Button>
+                        </motion.a>
                     </motion.div>
                 </motion.div>
             ))}
 
-            <Dialog header={`Projeto: ${selectedProject?.name}`} visible={openProjectModal} style={{ width: '90%' }} onHide={() => setOpenProjectModal(false)} >
-                <div className={`text-primary ${isMobile ? 'flex flex-column text-center' : 'grid gap-3'}`}>
-                    <div className={`${isMobile ? null : 'col-6'} relative border-round-2xl overflow-hidden`}>
-                        <img src={selectedProject?.cover} alt="" style={{ maxWidth: `${isMobile ? '100%' : '50rem'}` }} className='border-round-2xl' />
-                    </div>
-                    <div className={`p-dialog-content ${isMobile ? null : 'col-5'}`}>
-                        <h3 className={`m-0 z-1 text-primary ${isMobile ? 'text-3xl' : 'text-2xl'}`}>{selectedProject?.name}</h3>
-                        <p className={`text-primary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
-                        <p className={`text-primary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
-                        <p className={`text-primary ${isMobile ? 'text-sm' : 'text-lg'}`}>{selectedProject?.description}</p>
-                        <div className='flex flex-row align-items-center gap-3 justify-content-between mt-8 pt-3'>
-                            {selectedProject?.url && (
-                                <a href={selectedProject.url} target="_blank">
-                                    <Button
-                                        href={selectedProject.url}
-                                        target="_blank"
-                                        style={{ color: '#007bff', textDecoration: 'none' }}
-                                        className='bg-primary border-none border-round-lg gap-2'
-                                        icon={() => <FaLink size={20} />}
-                                    >
-                                        Projeto
-                                    </Button>
-                                </a>
-                            )}
-                            {selectedProject?.repository && (
-                                <a href={selectedProject?.repository} target="_blank">
-                                    <Button
-                                        href={selectedProject?.repository}
-                                        target="_blank"
-                                        style={{ color: '#007bff', textDecoration: 'none' }}
-                                        className='bg-primary border-none border-round-lg gap-2'
-                                        icon={() => <FaGithub size={20} />}
-                                    >
-                                        Repositório
-                                    </Button>
-                                </a>
-                            )}
-                        </div>
+            <ProjectsDialog
+                show={openProjectModal}
+                images={selectedProject?.gallery}
+                onClose={() => setOpenProjectModal(false)}
+                cover={selectedProject?.cover}
+            >
+                <div className={`p-dialog-content mx-5`}>
+                    <p className={`m-0 z-1 text-primary ${isMobile ? 'font-medium text-xl' : 'text-3xl'}`}>{selectedProject?.name}</p>
+                    <p className={`text-primary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
+                    <p className={`text-primary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
+                    <p className={`text-primary max-w-28rem ${isMobile ? 'font-light text-sm' : 'text-lg'}`}>{selectedProject?.description}</p>
+                    <div className={`flex flex-row align-items-center gap-3 pt-3 ${isMobile ? '' : 'justify-content-start'}`}>
+                        {selectedProject?.url && (
+                            <motion.a
+                                href={selectedProject.url} t
+                                arget="_blank"
+                                className='no-underline text-white'
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Button
+                                    href={selectedProject.url}
+                                    target="_blank"
+                                    rounded
+                                    outlined
+                                    className='border-primary border-round-3xl gap-2'
+                                    style={{ color: '#00b788' }}
+                                    icon={() => <FaLink size={20} />}
+                                >
+                                    Projeto
+                                </Button>
+                            </motion.a>
+                        )}
+                        {selectedProject?.repository && (
+                            <motion.a
+                                href={selectedProject?.repository}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className='no-underline text-white mx-2'
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Button
+                                    href={selectedProject?.repository}
+                                    target="_blank" rounded
+                                    outlined
+                                    className='border-primary border-round-3xl gap-2'
+                                    style={{ color: '#00b788' }}
+                                    icon={() => <FaGithub size={20} />}
+                                >
+                                    Repositório
+                                </Button>
+                            </motion.a>
+                        )}
                     </div>
                 </div>
-            </Dialog>
+            </ProjectsDialog>
         </motion.div >
 
     );
