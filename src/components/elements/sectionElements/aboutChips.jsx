@@ -14,75 +14,75 @@ const AboutChips = () => {
         {
             id: 1,
             name: 'Javascript',
-            icon: <AiOutlineJavaScript size={40} />
+            icon: <AiOutlineJavaScript size={35} />
         },
         {
             id: 2,
             name: 'Typescript',
-            icon: <BiLogoTypescript size={40} />
+            icon: <BiLogoTypescript size={35} />
         },
         {
             id: 3,
             name: 'React.JS',
-            icon: < FaReact size={40} />,
+            icon: < FaReact size={35} />,
             hasMargin: true
         },
         {
             id: 4,
             name: 'React Native',
-            icon: <TbBrandReactNative size={40} />
+            icon: <TbBrandReactNative size={35} />
         },
         {
             id: 5,
             name: 'Next.JS',
-            icon: <TbBrandNextjs size={40} />
+            icon: <TbBrandNextjs size={35} />
         },
         {
             id: 6,
             name: 'Node.JS',
-            icon: <FaNodeJs size={40} />
+            icon: <FaNodeJs size={35} />
         },
         {
             id: 8,
             name: 'C#/.NET',
-            icon: <AiOutlineDotNet size={40} />,
+            icon: <AiOutlineDotNet size={35} />,
             hasMargin: true
         },
         {
             id: 9,
             name: 'AWS',
-            icon: <FaAws size={40} />
+            icon: <FaAws size={35} />
         },
         {
             id: 10,
             name: 'Postman',
-            icon: <SiPostman size={40} />
+            icon: <SiPostman size={35} />
         },
         {
             id: 11,
             name: 'SQL Server',
-            icon: <SiMicrosoftsqlserver size={40} />
+            icon: <SiMicrosoftsqlserver size={35} />
         },
         {
             id: 12,
             name: 'MySQL',
-            icon: <SiMysql size={40} />,
+            icon: <SiMysql size={35} />,
             hasMargin: true
         },
         {
             id: 13,
             name: 'MongoDB',
-            icon: <SiMongodb size={40} />
+            icon: <SiMongodb size={35} />
         },
         {
             id: 14,
             name: 'Git/Etc',
-            icon: <FaGitAlt size={40} />
+            icon: <FaGitAlt size={35} />
         },
         {
             id: 15,
             name: 'Docker',
-            icon: <FaDocker size={40} />
+            icon: <FaDocker size={35} />
         }
     ];
 
