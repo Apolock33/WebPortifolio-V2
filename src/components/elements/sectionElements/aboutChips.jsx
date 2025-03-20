@@ -115,7 +115,7 @@ const AboutChips = () => {
                             transition={{ duration: 0.2 }}
                         >
                             {item.icon}
-                            <p className='my-2' style={{ fontSize: '0.5rem' }}>{item.name}</p>
+                            <p className='my-2' style={{ fontSize: '0.8rem' }}>{item.name}</p>
                         </motion.div>
                     ))}
                 </motion.div>
