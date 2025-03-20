@@ -105,7 +105,7 @@ const AboutChips = () => {
                             key={item.id}
                             className="col-12 md:col-3 p-1 border-primary border-1 flex flex-column align-items-center justify-content-center border-round-xl cursor-pointer"
                             style={{
-                                color: 'var(--primary-color)',
+                                color: 'var(--secondary-color)',
                                 textAlign: 'center',
                                 width: `${isMobile ? '100%' : '120px'}`,
                                 height: `${isMobile ? '100%' : '120px'}`
