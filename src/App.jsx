@@ -11,11 +11,11 @@ import Projects from './components/sections/projects';
 const App = () => {
 
   const sections = [
-    // {
-    //   id: 1,
-    //   name: 'Home',
-    //   component: <Home />
-    // },
+    {
+      id: 1,
+      name: 'Home',
+      component: <Home />
+    },
     {
       id: 2,
       name: 'About',
