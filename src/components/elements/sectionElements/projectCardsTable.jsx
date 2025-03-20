@@ -186,8 +186,7 @@ const ProjectCardsTable = () => {
                     <div className={`flex flex-row align-items-center gap-3 pt-3 ${isMobile ? '' : 'justify-content-start'}`}>
                         {selectedProject?.url && (
                             <motion.a
-                                href={selectedProject.url} t
-                                arget="_blank"
+                                href={selectedProject.url} target="_blank"
                                 className='no-underline text-white'
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
