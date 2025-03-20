@@ -178,11 +178,11 @@ const ProjectCardsTable = () => {
                 onClose={() => setOpenProjectModal(false)}
                 cover={selectedProject?.cover}
             >
-                <div className={`p-dialog-content mx-5`}>
-                    <p className={`m-0 z-1 text-primary ${isMobile ? 'font-medium text-xl' : 'text-3xl'}`}>{selectedProject?.name}</p>
-                    <p className={`text-primary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
-                    <p className={`text-primary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
-                    <p className={`text-primary max-w-28rem ${isMobile ? 'font-light text-sm' : 'text-lg'}`}>{selectedProject?.description}</p>
+                <div className={`mx-5`}>
+                    <h1 className={`m-0 z-1 text-primary ${isMobile ? ' text-xl' : 'text-3xl'}`}>{selectedProject?.name}</h1>
+                    <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
+                    <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
+                    <p className={`text-secondary max-w-28rem ${isMobile ? 'text-sm' : 'text-lg'}`}>{selectedProject?.description}</p>
                     <div className={`flex flex-row align-items-center gap-3 pt-3 ${isMobile ? '' : 'justify-content-start'}`}>
                         {selectedProject?.url && (
                             <motion.a
@@ -198,7 +198,7 @@ const ProjectCardsTable = () => {
                                     rounded
                                     outlined
                                     className='border-primary border-round-3xl gap-2'
-                                    style={{ color: '#00b788' }}
+                                    style={{ color: '#ffffff' }}
                                     icon={() => <FaLink size={20} />}
                                 >
                                     Projeto
@@ -216,7 +216,8 @@ const ProjectCardsTable = () => {
                             >
                                 <Button
                                     href={selectedProject?.repository}
-                                    target="_blank" rounded
+                                    target="_blank"
+                                    rounded
                                     outlined
                                     className='border-primary border-round-3xl gap-2'
                                     style={{ color: '#00b788' }}

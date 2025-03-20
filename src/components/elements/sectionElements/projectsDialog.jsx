@@ -99,11 +99,12 @@ const ProjectsDialog = ({ show = false, onClose, images, cover, children }) => {
                             text-primary'
                                 onClick={onClose} />
                         </div>
-                        <div className='flex justify-content-center align-items-center'>
+                        <div className={`${isMobile ?
+                            'flex flex-column justify-content-center align-items-center' : 'flex justify-content-center align-items-center'}`}>
                             <div id='carousel'>
                                 {isMobile ?
                                     <>
-                                        <img src={cover} alt={"cover"} className='w-full' />
+                                        <img src={cover} alt={"cover"} className='w-full my-3' />
                                     </>
                                     :
                                     <Galleria
