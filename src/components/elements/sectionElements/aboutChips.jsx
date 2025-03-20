@@ -14,75 +14,75 @@ const AboutChips = () => {
         {
             id: 1,
             name: 'Javascript',
-            icon: <AiOutlineJavaScript size={35} />
+            icon: <AiOutlineJavaScript size={30} />
         },
         {
             id: 2,
             name: 'Typescript',
-            icon: <BiLogoTypescript size={35} />
+            icon: <BiLogoTypescript size={30} />
         },
         {
             id: 3,
             name: 'React.JS',
-            icon: < FaReact size={35} />,
+            icon: < FaReact size={30} />,
             hasMargin: true
         },
         {
             id: 4,
             name: 'React Native',
-            icon: <TbBrandReactNative size={35} />
+            icon: <TbBrandReactNative size={30} />
         },
         {
             id: 5,
             name: 'Next.JS',
-            icon: <TbBrandNextjs size={35} />
+            icon: <TbBrandNextjs size={30} />
         },
         {
             id: 6,
             name: 'Node.JS',
-            icon: <FaNodeJs size={35} />
+            icon: <FaNodeJs size={30} />
         },
         {
             id: 8,
             name: 'C#/.NET',
-            icon: <AiOutlineDotNet size={35} />,
+            icon: <AiOutlineDotNet size={30} />,
             hasMargin: true
         },
         {
             id: 9,
             name: 'AWS',
-            icon: <FaAws size={35} />
+            icon: <FaAws size={30} />
         },
         {
             id: 10,
             name: 'Postman',
-            icon: <SiPostman size={35} />
+            icon: <SiPostman size={30} />
         },
         {
             id: 11,
             name: 'SQL Server',
-            icon: <SiMicrosoftsqlserver size={35} />
+            icon: <SiMicrosoftsqlserver size={30} />
         },
         {
             id: 12,
             name: 'MySQL',
-            icon: <SiMysql size={35} />,
+            icon: <SiMysql size={30} />,
             hasMargin: true
         },
         {
             id: 13,
             name: 'MongoDB',
-            icon: <SiMongodb size={35} />
+            icon: <SiMongodb size={30} />
         },
         {
             id: 14,
             name: 'Git/Etc',
-            icon: <FaGitAlt size={35} />
+            icon: <FaGitAlt size={30} />
         },
         {
             id: 15,
             name: 'Docker',
-            icon: <FaDocker size={35} />
+            icon: <FaDocker size={30} />
         }
     ];
 
@@ -115,7 +115,7 @@ const AboutChips = () => {
                             transition={{ duration: 0.2 }}
                         >
                             {item.icon}
-                            <p className='text-sm my-2'>{item.name}</p>
+                            <p className='my-2' style={{ fontSize: '0.5rem' }}>{item.name}</p>
                         </motion.div>
                     ))}
                 </motion.div>
