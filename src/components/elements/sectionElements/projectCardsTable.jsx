@@ -178,12 +178,12 @@ const ProjectCardsTable = () => {
                 onClose={() => setOpenProjectModal(false)}
                 cover={selectedProject?.cover}
             >
-                <div className={`${isMobile ? 'text-center mx-2' : 'mx-8'}`}>
+                <div className={`${isMobile ? 'text-center ' : 'mx-8'}`}>
                     <h1 className={`m-0 text-primary ${isMobile ? ' text-xl' : 'text-3xl'}`}>{selectedProject?.name}</h1>
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
-                    <p className={`text-secondary max-w-28rem ${isMobile ? 'text-sm' : 'text-lg'}`}>{selectedProject?.description}</p>
-                    <div className={`flex flex-row align-items-center gap-3 pt-3 ${isMobile ? '' : 'justify-content-start'}`}>
+                    <p className={`text-secondary max-w-28rem ${isMobile ? 'text-sm mx-3' : 'text-lg'}`}>{selectedProject?.description}</p>
+                    <div className={`flex flex-row align-items-center gap-3 pt-3 ${isMobile ? 'justify-content-center' : 'justify-content-center'}`}>
                         {selectedProject?.url && (
                             <motion.a
                                 href={selectedProject.url} target="_blank"
