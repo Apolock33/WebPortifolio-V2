@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Button } from 'primereact/button';
 import { Galleria } from 'primereact/galleria';
 import { GlobalContext } from '../../../contexts/globalContext';
+import { th } from 'motion/react-client';
 
 const ProjectsDialog = ({ show = false, onClose, images, cover, children }) => {
     const { isMobile } = useContext(GlobalContext);
@@ -41,14 +42,15 @@ const ProjectsDialog = ({ show = false, onClose, images, cover, children }) => {
 
     const imageTemplate = (image) => {
         return (
-            <div className="surface-border m-5 text-center py-5">
-                <div>
-                    <img src={image.img} alt={image.name} width="650" />
-                </div>
-            </div>
+            <img src={image.img} alt={image.name} width="650" />
         );
     };
 
+    const thumbnailTemplate = (image) => {
+        return (
+            <img src={image.img} alt={image.name} width="75" />
+        );
+    }
 
     return (
         <AnimatePresence>
@@ -83,13 +85,12 @@ const ProjectsDialog = ({ show = false, onClose, images, cover, children }) => {
                         style={{
                             background: 'var(--theme-color)',
                             borderRadius: '8px',
-                            padding: '20px',
+                            padding: '20px 30px 40px 70px',
                             width: '80%',
                             backgroundColor: 'var(--theme-color)'
                         }}
                     >
-                        <div className='flex justify-content-between align-items-center'>
-                            <p></p>
+                        <div className='flex justify-content-end align-items-center m-0'>
                             <Button
                                 icon='pi pi-times'
                                 iconPos='right'
@@ -114,8 +115,8 @@ const ProjectsDialog = ({ show = false, onClose, images, cover, children }) => {
                                         style={{ maxWidth: '640px', maxHeight: '580px' }}
                                         showItemNavigators
                                         showItemNavigatorsOnHover
-                                        showIndicators
-                                        showThumbnails={false}
+                                        showThumbnails={true}
+                                        thumbnail={thumbnailTemplate}
                                         item={imageTemplate}
                                     />}
                             </div>

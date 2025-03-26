@@ -178,12 +178,12 @@ const ProjectCardsTable = () => {
                 onClose={() => setOpenProjectModal(false)}
                 cover={selectedProject?.cover}
             >
-                <div className={`${isMobile ? 'text-center ' : 'mx-8'}`}>
+                <div className={`${isMobile ? 'text-center ' : 'mx-5'}`}>
                     <h1 className={`m-0 text-primary ${isMobile ? ' text-xl' : 'text-3xl'}`}>{selectedProject?.name}</h1>
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.date}</p>
                     <p className={`text-secondary ${!isMobile ? 'font-medium text-xl' : 'text-sm'}`}>{selectedProject?.tecnologies}</p>
                     <p className={`text-secondary max-w-28rem ${isMobile ? 'text-sm mx-3' : 'text-lg'}`}>{selectedProject?.description}</p>
-                    <div className={`flex flex-row align-items-center gap-1 mt-4  ${isMobile ? 'justify-content-center pl-2' : 'justify-content-center'}`}>
+                    <div className={`flex flex-row align-items-center gap-1 mt-4  ${isMobile ? 'justify-content-center pl-2' : 'justify-content-between'}`}>
                         {selectedProject?.url && (
                             <motion.a
                                 href={selectedProject.url} target="_blank"
@@ -200,7 +200,7 @@ const ProjectCardsTable = () => {
                                     style={{ color: '#ffffff' }}
                                     icon={() => <FaLink size={20} />}
                                 >
-                                    Projeto
+                                    Demo
                                 </Button>
                             </motion.a>
                         )}
@@ -218,7 +218,7 @@ const ProjectCardsTable = () => {
                                     target="_blank"
                                     rounded
                                     outlined
-                                    className='border-primary border-round-3xl gap-2'
+                                    className='text-white border-primary border-round-3xl gap-2'
                                     style={{ color: '#00b788' }}
                                     icon={() => <FaGithub size={20} />}
                                 >
