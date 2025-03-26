@@ -85,7 +85,7 @@ const ProjectsDialog = ({ show = false, onClose, images, cover, children }) => {
                         style={{
                             background: 'var(--theme-color)',
                             borderRadius: '8px',
-                            padding: '20px 30px 40px 70px',
+                            padding: isMobile ? '20px' : '20px 30px 40px 70px',
                             width: '80%',
                             backgroundColor: 'var(--theme-color)'
                         }}
