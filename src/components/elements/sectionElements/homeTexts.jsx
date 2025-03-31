@@ -49,7 +49,7 @@ const HomeTexts = () => {
       <h3 className='font-medium text-2xl'>Engenheiro de Software</h3>
 
       <div className={isMobile ? 'flex flex-column gap-3 mt-3' : 'flex gap-3 mt-3'}>
-        <motion.a href={`/CurriculoCarlosADev.pdf`} target='_blank' download="CurriculoCarlosADev.pdf" className='no-underline text-white' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+        <motion.a href={`/CurriculoCarlosADev.pdf`} target='_blank' className='no-underline text-white' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <Button icon={<FaDownload />} iconPos='right' rounded className='px-3 py-2 gap-3 bg-primary border-none text-xl'>
             Baixar Currículo
           </Button>
