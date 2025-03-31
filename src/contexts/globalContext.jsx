@@ -1,17 +1,22 @@
 import React, { createContext, useEffect, useState } from 'react';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const GlobalContext = createContext({});
 
 const GlobalProvider = ({ children }) => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const { width } = useWindowDimensions();
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        setWidth(window.innerWidth);
 
         if (width <= 767) {
             setIsMobile(true);
         }
+
+        if (width > 767) {
+            setIsMobile(false);
+        }
+
     });
 
     return (
